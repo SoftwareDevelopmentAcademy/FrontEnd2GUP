@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Przykładowa strona</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#!/">Strona główna</a></li>
+                <li><a href="#!/add">Dodaj film</a></li>
+                <li><a href="#!/show">Pokaż filmy</a></li>
+                <li><a href="#!/other">Pokaż coś innego</a></li>
+            </ul>
+        </nav>
+        
+        <div ng-view></div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
