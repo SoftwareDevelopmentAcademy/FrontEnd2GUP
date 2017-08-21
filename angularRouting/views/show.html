@@ -4,7 +4,7 @@
         {{ movie.title }}, 
         {{ movie.year }}, 
         {{ movie.genre }}
-        <a href="./delete/{{ movie.id }}">Usuń</a>
+        <a href="/delete/{{ movie.id }}">Usuń</a>
         <button type="button" ng-click="delete(movie.id)">Usuń</button>
     </li>
 </ul>
