@@ -1,11 +1,20 @@
-console.log('test');
+var exchange = [
+    { currency: "USD", value: 3.65 },
+    { currency: "EUR", value: 4.15 },
+    { currency: "GBP", value: 4.70 },
+    { currency: "PHP", value: 0.65 }
+];
 
-// poieranie wartosci z inputa
-var amount = document.getElementById('amount');
-var btn = document.getElementById('count');
+var ul = $('ul.items');
 
-btn.addEventListener('click', function() {
-    var res = document.getElementById('result');
-    res.innerHTML = "Kwota w USD to: " + (parseFloat(amount.value) / 3.65).toFixed(2);
-    //console.log(amount.value);
+for(var item of exchange) {
+    //console.log(item.currency);
+    $('<li/>')
+        .html(item.currency)
+        .data('rate', item.value)
+        .appendTo(ul);
+}
+
+$('li').on('click', function() {
+   alert($(this).data('rate')); 
 });
