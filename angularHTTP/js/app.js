@@ -1,11 +1,6 @@
 var app = angular.module('webapp', ['ngRoute']);
 
-app.config(function($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
-    $locationProvider.hashPrefix('');
+app.config(function($routeProvider) {
     $routeProvider
     .when('/', {
        templateUrl: './views/main.html',
