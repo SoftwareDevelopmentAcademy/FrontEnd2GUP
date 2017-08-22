@@ -3,7 +3,11 @@ var app = angular.module('webapp', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
     .when('/', {
-       templateUrl: './views/main.html',
+        templateUrl: './views/main.html',
+        controller: 'main'
+    })
+    .when('/users', {
+       templateUrl: './views/users.html',
         controller: 'first'
     })
     .when('/user/:id', {
