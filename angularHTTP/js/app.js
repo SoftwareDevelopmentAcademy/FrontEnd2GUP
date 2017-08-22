@@ -24,7 +24,7 @@ app.controller('main', function($scope) {
     
 });
 
-app.controller('first', function($scope, $http) {
+app.controller('first', function($scope, $http, $filter) {
     // $http(/*obiekt konfiguracyjny*/)
     //    .then(/*success handler*/, 
     //          /*error handler*/);
@@ -59,7 +59,8 @@ app.controller('first', function($scope, $http) {
             url: 'http://localhost:3000/users/' + id,
             method: 'DELETE'
         }).then(function(success) {
-            
+            var deletedUser = $filter('filter')($scope.users, { id: id })[0];
+            $scope.users.splice($scope.users.indexOf(deletedUser), 1);
         }, function(error) {
             console.log(error);
         });
