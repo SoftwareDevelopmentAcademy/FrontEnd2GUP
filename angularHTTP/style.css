@@ -1,0 +1,20 @@
+body {
+    background-color: #eee;
+    
+}
+
+* {
+    font-family: "Arial";
+}
+
+.userEdit, .userDetails {
+    background-color: #eee;
+    color: black;
+    padding: 3px;
+    border: 0;
+    font-size: 14px;
+}
+
+.userDetails {
+    text-decoration: none;
+}

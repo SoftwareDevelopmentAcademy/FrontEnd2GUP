@@ -2,7 +2,15 @@
 <input type="text" ng-model="lastname" />
 <button ng-click="add()">Dodaj</button>
 <hr>
-<p ng-repeat="user in users">
-    <a href="#!/user/{{ user.id }}">{{ user.name }} {{ user.lastname }}</a> 
+<div ng-repeat="user in users">
+    <span ng-show="editId == user.id">
+        <input type="text" ng-model="user.name" class="userEdit">
+        <input type="text" ng-model="user.lastname" class="userEdit">
+    </span>
+    <a href="#!/user/{{ user.id }}"  ng-hide="editId == user.id" class="userDetails">{{ user.name }} {{ user.lastname }}</a> 
     <button ng-click="delete(user.id)">Usuń</button>
-</p>
+    <button ng-click="edit(user)">
+        <span ng-hide="editId == user.id">Edytuj</span>
+        <span ng-show="editId == user.id">Zapisz</span>
+    </button>
+</div>

@@ -20,8 +20,18 @@ app.config(function($routeProvider) {
     });
 });
 
-app.controller('main', function($scope) {
+app.controller('main', function($scope, $filter, filterFilter) {
+    $scope.records = [
+        { id: 1, name: 'polska', currency: "PLN" },
+        { id: 2, name: 'niemcy', currency: "EUR" },
+        { id: 3, name: 'rosja', currency: "RBL" },
+        { id: 4, name: 'hiszpania', currency: "EUR" }
+    ];
     
+    $scope.show = function(currency) {
+        var ret = $filter('filter')($scope.records, { currency: currency });
+        console.log(ret);
+    }
 });
 
 app.controller('first', function($scope, $http, $filter) {
@@ -64,6 +74,28 @@ app.controller('first', function($scope, $http, $filter) {
         }, function(error) {
             console.log(error);
         });
+    }
+    
+    
+    $scope.edit = function(user) {
+        console.log(user);
+        if($scope.editId == user.id) {
+            $http({
+                url: 'http://localhost:3000/users/' + user.id,
+                method: 'PUT',
+                data: {
+                    name: user.name,
+                    lastname: user.lastname
+                }
+            }).then(function(s) {
+                console.log(s);
+            }, function(e) {
+                console.error(e);
+            });
+            $scope.editId = null;
+        } else {
+            $scope.editId = user.id;
+        }
     }
 });
 
