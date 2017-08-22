@@ -1,1 +1,8 @@
-<p ng-repeat="user in users"><a href="#!/user/{{ user.id }}">{{ user.name }} {{ user.lastname }}</a></p>
+<input type="text" ng-model="name" />
+<input type="text" ng-model="lastname" />
+<button ng-click="add()">Dodaj</button>
+<hr>
+<p ng-repeat="user in users">
+    <a href="#!/user/{{ user.id }}">{{ user.name }} {{ user.lastname }}</a> 
+    <button ng-click="delete(user.id)">Usuń</button>
+</p>
