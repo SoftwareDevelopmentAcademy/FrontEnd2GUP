@@ -7,8 +7,30 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <div ng-controller="mainController">
-            {{ users }}
+        <nav class="navbar navbar-fixed-top navbar-inverse">
+            <a class="navbar-brand">Users</a>
+        </nav>
+        <div class="container" ng-controller="mainController">
+            <div class="pull-right">
+                <button class="btn btn-primary">Kobiety</button>
+                <button class="btn btn-success">Mężczyźni</button>
+                <button class="btn btn-warning">Wszyscy</button>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Imię</th>
+                        <th>Nazwisko</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in users">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.lastname }}</td>
+                    </tr>
+            </table>
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
