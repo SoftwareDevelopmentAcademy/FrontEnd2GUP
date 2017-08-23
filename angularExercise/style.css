@@ -1,0 +1,11 @@
+.right {
+    float: right;
+}
+
+.myFont {
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}

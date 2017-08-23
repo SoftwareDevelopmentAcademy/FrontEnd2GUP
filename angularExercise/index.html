@@ -6,9 +6,14 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        
         <div ng-controller="mainController">
-            {{ subjects }}
+            <p ng-repeat="subject in subjects">
+                <span class="myFont" ng-hide="subject.id == actualEditId" ng-dblclick="edit(subject)">
+                    {{ subject.name }}
+                </span>
+                
+                <input type="text" ng-model="subject.name" ng-show="subject.id == actualEditId" ng-keyup="tryEdit($event.keyCode, subject)">
+            </p>
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
