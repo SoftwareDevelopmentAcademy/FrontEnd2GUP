@@ -1,11 +1,12 @@
 var app = angular.module('webapp', []);
 
 app.controller('mainController', function($scope) {
-    function makeUser(name, lastname) {
+    $scope.makeUser = function(name, lastname) {
         return { name: name, lastname: lastname }
     }
+    
     $scope.users = [];
     for(var i = 0; i < 10; i++) {
-        $scope.users.push(makeUser("Justyna", "Testowa"));
+        $scope.users.push($scope.makeUser("Justyna", "Testowa"));
     }
 });
