@@ -1,0 +1,31 @@
+1. Utwórzmy strukturê strony tj. plik index.html (a w nim dodajemy angulara + nasz skrypt JS - app.js, boostrap, jquery)
+	- nastêpnie dodajmy w pliku app.js deklaracjê naszej aplikacji (var app = ...) oraz kontroler naszej aplikacji
+2. Zadeklarujmy nasz widok - tj. tabelê do wyœwietlania danych oraz trzy buttony z odpowiednimi akcjami ng-click.
+
+(!) Pomyœlmy w jaki sposób bêdzie wygl¹da³ nasz uzytkownik - na chwilê obecn¹ reprezentowany jest za pomoc¹ dwóch pól - imienia i nazwiska. Zatem u¿ytkownik mo¿e byæ tworzony za pomoc¹ obiektu np.
+
+function makeUser(name, lastname) {
+	return { name: name, lastname: lastname }
+}
+
+Zatem po stronie kontrolera do testowania naszego wygl¹du (dopóki nie mamy po³¹czenia poprzez $http) u¿yjmy losowych u¿ytkowników:
+
+$scope.users = [];
+for(var i = 0; i < 10; i++) {
+	$scope.users.push( makeUser("Tester", "Testowy") );
+}
+
+W taki sposób mo¿emy uzyskaæ 10 testowych u¿ytkowników, nim przejdziemy do obs³ugi po³¹czeñ http.
+
+Zatem nasze zadanie zosta³o rodzielone na dwie czêœci tj. czêœæ zajmuj¹ca siê prezentacj¹ danych (pierwsza) i druga czêœæ zajmuj¹ca siê poraniem i wygenerowaniem losowych danych dla u¿ytkownika.
+
+
+3. Pobierzmy wszystkie zasoby z bazy danych - /db
+    - zasoby, ktore zostan¹ zwrócone, przypiszmy do $scope.resources
+
+4. Przy generowaniu losowego u¿ytkownika  (w forze wype³niaj¹cym $scope.users) wylosujmy dane (imiê i nazwisko).
+    - najpierw ustalmy p³eæ u¿ytkownika, którego chcemy wype³niæ
+        > losujemy liczbe <0, 1>
+        > nastêpnie przypisujemy do zmiennej var sex; wartoœæ 'male' w przypadku 0, 'female' w przypadku 1
+        > gdy chcia³bym wylosowaæ imiona i nazwiska na podstawie p³ci:
+            - sex + '_name', sex + '_lastname'

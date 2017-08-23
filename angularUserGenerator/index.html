@@ -12,9 +12,9 @@
         </nav>
         <div class="container" ng-controller="mainController">
             <div class="pull-right">
-                <button class="btn btn-primary">Kobiety</button>
-                <button class="btn btn-success">Mężczyźni</button>
-                <button class="btn btn-warning">Wszyscy</button>
+                <button class="btn btn-primary" ng-click="loadData('female')">Kobiety</button>
+                <button class="btn btn-success" ng-click="loadData('male')">Mężczyźni</button>
+                <button class="btn btn-warning" ng-click="loadData()">Wszyscy</button>
             </div>
             <table class="table">
                 <thead>
