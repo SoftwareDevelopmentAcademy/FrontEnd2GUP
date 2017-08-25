@@ -1,11 +1,11 @@
+body {
+    background-color: cornsilk;
+}
+
 .d-none {
     display: none;
 }
 
-.d-block {
-    display: block;
-}
-
-.d-inline {
-    display: inline;
+.m-b-100 {
+    margin-bottom: 100px;
 }

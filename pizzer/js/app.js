@@ -4,7 +4,7 @@ $(document).ready(function() {
     var $handleLoginBtn = $('.handleLogin');
     
     $loginLink.on('click', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // blokujemy domyslne dzialanie elementu 'a'
         $loginLink.addClass('d-none');
         $loginBox.removeClass('d-none');
     });

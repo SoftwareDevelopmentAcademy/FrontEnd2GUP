@@ -29,3 +29,5 @@ name - nazwa pizzy
 points - ilość punktów przyznawanych za kliknięcie
 image - obrazek reprezentujący wygląd naszej pizzy
 costs - koszt pizzy
+
+A następnie zmodyfikuj aplikację w taki sposób, aby pizza, która została umieszczona w zadaniu drugim, była umieszczona za pomocą JS.
