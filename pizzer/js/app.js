@@ -2,7 +2,8 @@ $(document).ready(function() {
     var $loginLink = $('.loginLink');
     var $loginBox = $('.loginBox');
     var $handleLoginBtn = $('.handleLogin');
-    
+    var $counter = $('.counter');
+    $counter.html(0);
     $loginLink.on('click', function(e) {
         e.preventDefault(); // blokujemy domyslne dzialanie elementu 'a'
         $loginLink.addClass('d-none');
@@ -35,7 +36,12 @@ $(document).ready(function() {
     });
     
     $pizza.on('click', function(e) {
-        alert('Kliknięto na pizze!');
+        $counter.html(pizza[0].points + parseInt($counter.html()));
     });
+    
+    var boosters = [
+        { id: 1, name: 'Włoska czapka kucharska', points: 10, per: 1000, image: 'cookhat.png', value: 2 }
+    ];
+
     
 });

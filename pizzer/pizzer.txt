@@ -41,3 +41,35 @@ mouseover - zmniejsza obrazek do 90% (wysokość i szerokość)
 mouseleave - zwiększa z powrotem do 100% obrazek pizzy
 
 Ostyluj klasę pizzy w taki sposób, aby wyświetliła się rączka (jakby pizza była linkem - sokrzystaj z atrybutu css 'cursor').
+
+Zadanie 5.
+
+W kolumnie, która zajmuje 4 miejsca utwórz licznik, np.:
+<p>
+    Upieczone pizze: <span class="counter"></span>
+</p>
+
+A następnie przerób kod w taki sposób, aby po każdym kliknieciu na pizze zamiast alertu zwiększany był licznik punktów. Punkty dla danej pizzy należy pobrać z tablicy z zadania 3.
+
+Zadanie 6.
+
+Pod licznikiem punktów umieść div'a, w którym będą prezentowane tzw. boostery np.
+
+<div class="boostList"></div>
+
+Następnie zadeklaruj tablicę boosterów:
+
+var boosters = [
+    { id: 1, name: 'Włoska czapka kucharska', points: 10, per: 1000, image: 'cookhat.png', value: 2 }
+];
+
+id - id boostera
+name - nazwa boostera
+points - punkty, ktore sa wymagane do kupna boostera
+per - czas w ms co ile automatycznie ma być przyznawany booster
+value - ilość punktów przyznawanych przez booster
+image - obrazek boostera
+
+Zadanie 7. 
+
+Wyświetl listę dostępnych boosterów w warstwie prezentacji treści (tj. po stronie JS napisz kod, który wypełni listę boosterów w widoku). Dodaj event listener na każdy z boosterów, tak aby po kliknieciu na niego, w alercie znajdywała się jego nazwa.
