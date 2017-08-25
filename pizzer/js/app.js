@@ -75,6 +75,7 @@ $(document).ready(function() {
         if(userPoints > currentB.points) {
             // mozemy go kupic
             userPoints -= currentB.points;
+            $counter.html(userPoints);
             setInterval(function() {
                 var points = parseInt($counter.html());
                 points += currentB.value;
