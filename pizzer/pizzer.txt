@@ -73,3 +73,7 @@ image - obrazek boostera
 Zadanie 7. 
 
 Wyświetl listę dostępnych boosterów w warstwie prezentacji treści (tj. po stronie JS napisz kod, który wypełni listę boosterów w widoku). Dodaj event listener na każdy z boosterów, tak aby po kliknieciu na niego, w alercie znajdywała się jego nazwa.
+
+Zadanie 8.
+
+Po kliknięciu na wybrany booster powinniśmy go zakupić. Tak jak powinna zostać odjęta od naszych punktów ilość punktów, którą koszuje booster (points), a następnie dodany obrazek zakupionego boostera. Zakupiony booster powinien dodawać automatycznie nam punkty co określoną ilość czasu (czas oraz ilość punktów zadeklarowane są w obiekcie boostera). Wykorzystaj funkcję setInterval() do wprowdzenia działania funkcjonalności.

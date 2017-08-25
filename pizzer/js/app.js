@@ -40,8 +40,17 @@ $(document).ready(function() {
     });
     
     var boosters = [
-        { id: 1, name: 'Włoska czapka kucharska', points: 10, per: 1000, image: 'cookhat.png', value: 2 }
+        { id: 1, name: 'Włoska czapka kucharska', points: 10, per: 1000, image: 'cookhat.png', value: 2 },
+        { id: 2, name: 'Mąka pszenna', points: 15, per: 500, image: 'cookhat.png', value: 1 }
     ];
 
+    $('<ul/>', { class: 'boosters' }).appendTo('.boostList');
     
+    for(var b of boosters) {
+        $('<li/>').html(b.name).appendTo('.boosters');
+    }
+    
+    $('ul.boosters > li').on('click', function(e) {
+        alert($(this).html());
+    });
 });
