@@ -1,0 +1,31 @@
+Utwórz nowy projekt - pizzer. Dołącz do projektu bootstrapa oraz własny plik CSS, następnie jQuery oraz własny plik app.js 
+Struktura projektu powinna wyglądać następująco:
+./
+js/
+    app.js
+css/
+    style.css
+images/
+index.html
+
+Zadanie 1. 
+
+W lewym górnym logu umieść link Zaloguj. Po naciśnięciu link powinien zniknąć a w jego miejsce pojawić się formularz z polami login, password oraz button Zaloguj. Po naciśnięciu na button powinien wyświetlić się alert('Zalogowano');
+
+Zadanie 2.
+
+Umieść jeden rząd (.row), a w nim dwie sekcje w proporcji 8:4. W większej sekcji umieść na środku obrazek: http://www.al-capone.com.pl/data/offer/1_300x300.png (obrazek należy zapisać w folderze images pod nazwa margarita.png)
+
+Zadanie 3.
+
+Utwórz tablicę obiektów w pliku app.js:
+
+var pizza = [
+    { id: 1, name: 'Margarita', points: 1, image: 'margarita.png', costs: 0 }
+];
+
+id - identyfikator pizzy
+name - nazwa pizzy
+points - ilość punktów przyznawanych za kliknięcie
+image - obrazek reprezentujący wygląd naszej pizzy
+costs - koszt pizzy
