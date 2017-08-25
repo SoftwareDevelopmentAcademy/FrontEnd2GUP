@@ -47,10 +47,39 @@ $(document).ready(function() {
     $('<ul/>', { class: 'boosters' }).appendTo('.boostList');
     
     for(var b of boosters) {
-        $('<li/>').html(b.name).appendTo('.boosters');
+        $('<li/>', { id: 'b_' + b.id } )
+            .html(b.name)
+            .appendTo('.boosters');
     }
     
     $('ul.boosters > li').on('click', function(e) {
-        alert($(this).html());
+        // 1. $(this) - reprezentuje aktualny moj booster na ktory kliknalem
+        // 2. pobieram id z boostera i sprawdzam jaki ma faktyczny id (tj. b_{id})
+        // 3. Wybieramy obiekt z tablicy boosterow po ID
+        // 4. Sprawdzamy czy stac nas na booster
+        //          | TAK
+        //  odejmujemy koszt boostera od naszych punktow
+        //  ustawiamy setInterval z prametrami boostera
+        var elementId = $(this).attr('id');
+        var id = parseInt(elementId.replace('b_', ''));
+        var currentB;
+        
+        for(var b of boosters) {
+            if(b.id == id) {
+                currentB = b;
+                break;
+            }
+        }
+        alert(currentB.id);
+        var userPoints = parseInt($counter.html());
+        if(userPoints > currentB.points) {
+            // mozemy go kupic
+            userPoints -= currentB.points;
+            setInterval(function() {
+                var points = parseInt($counter.html());
+                points += currentB.value;
+                $counter.html(points);
+            }, currentB.per);
+        }
     });
 });
