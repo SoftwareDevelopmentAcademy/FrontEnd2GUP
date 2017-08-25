@@ -22,16 +22,17 @@ app.controller('mainController', function($scope, $http) {
     }); 
     
     $scope.loadData = function(sex) {
-        if(['male', 'female'].indexOf(sex.toLowerCase()) == -1) {
-            // losujemy liczbe <0, 1>
-            var r = Math.round(Math.random()); // <0, 1>
-            // następnie przypisujemy do zmiennej var sex; wartość 'male' w przypadku 0, 'female' w przypadku 1
-            sex = (r === 0) ? 'male' : 'female';
-        }
+        var gender;
         $scope.users = [];
         for(var i = 0; i < 10; i++) {
-            var name = $scope.getRandomItemFromArray($scope.resources[sex + '_name']);
-            var lastname = $scope.getRandomItemFromArray($scope.resources[sex + '_lastname']);
+            if(sex === '') {
+                var r = Math.round(Math.random()); // <0, 1>
+                gender = (r === 0) ? 'male' : 'female';
+            } else {
+                gender = sex;
+            }
+            var name = $scope.getRandomItemFromArray($scope.resources[gender + '_name']);
+            var lastname = $scope.getRandomItemFromArray($scope.resources[gender + '_lastname']);
             $scope.users.push($scope.makeUser(name, lastname));
         }    
     }
