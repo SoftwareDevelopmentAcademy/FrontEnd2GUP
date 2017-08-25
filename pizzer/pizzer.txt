@@ -31,3 +31,13 @@ image - obrazek reprezentujący wygląd naszej pizzy
 costs - koszt pizzy
 
 A następnie zmodyfikuj aplikację w taki sposób, aby pizza, która została umieszczona w zadaniu drugim, była umieszczona za pomocą JS.
+
+Zadanie 4.
+
+Napisz eventlistener dla pizzy dla następujących eventów:
+
+click - wyświetla alert('Kliknięto na pizze!');
+mouseover - zmniejsza obrazek do 90% (wysokość i szerokość)
+mouseleave - zwiększa z powrotem do 100% obrazek pizzy
+
+Ostyluj klasę pizzy w taki sposób, aby wyświetliła się rączka (jakby pizza była linkem - sokrzystaj z atrybutu css 'cursor').

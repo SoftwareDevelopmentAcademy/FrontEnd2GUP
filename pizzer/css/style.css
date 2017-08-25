@@ -9,3 +9,7 @@ body {
 .m-b-100 {
     margin-bottom: 100px;
 }
+
+.pizza {
+    cursor: pointer;
+}
